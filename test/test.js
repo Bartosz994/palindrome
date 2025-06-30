@@ -25,6 +25,10 @@ describe("Phrase", function() {
          let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
         assert(punctuatedPalindrome.palindrome);
   });
+    it("should return true for a non-empty palindrome", function() {
+      let emptyString = new Phrase('');
+      assert.notStrictEqual(emptyString.palindrome(),"");
+     });
   describe("#letters", function () {
     it("should return only letters", function() {
       let punctuatedPalindrome = new Phrase ("Madam, I'm Adam.");

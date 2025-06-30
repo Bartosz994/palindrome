@@ -14,11 +14,16 @@ function Phrase(content) {
   }
 
   this.letters = function letters() {
-   return (this.content.match(/[a-z]/gi) || []).join("");
+    const letterRegEx = /[a-z]/gi;
+   return (this.content.match(letterRegEx) || []).join("");
   }
   // Returns true if the phrase is a palindrome, false otherwise.
   this.palindrome = function palindrome() {
+    if (this.processedContent()){
     return this.processedContent() === this.processedContent().reverse();
+  } else {
+    return false; 
   }
+}
 }
 module.exports = Phrase;
